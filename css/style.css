@@ -14,50 +14,34 @@ body {
     overflow-x: hidden;
 }
 
-/* main-header */
-#sticky {
-    width: 100%;
-    position: relative;
-    z-index: 9999;
-    /* overflow: hidden; */
-    /* outline: 1px solid red; */
-}
-#sticky .sticky_wrap {
-    max-width: 1920px;
-    min-width: 1200px;
-    height: 100vh;
-    margin: 0 auto;
-    position: fixed;
-    top: 0; left: 0;
-    right: 0; bottom: 0;
-    /* background-color: red; */
-    /* outline: 1px solid red; */
-    /* overflow: hidden; */
-}
 
+/* main-header */
 #sticky .logo {
     width: 61px; height: 56px;
-    position: absolute; 
+    position: fixed; 
     /* position fixed - 스크롤 내려도 위치 고정 위해 */
     left: 50px;
     top: 50px;
     /* outline: 1px solid red; */
+    z-index: 1001;
 }
+
 /* 메뉴 영역 */
 .menu {
-    position: absolute;
+    position: fixed;
     top: 50px; 
     right: 50px; 
     /* margin-right: 50px; */
     width: 46px; height: 46px;
     /* outline: 1px solid blue; */
+    z-index: 1001;
 }
 .menu-link {
     width: 100%;
     height: 100%;
     position: absolute;
-    /* z-index: ; */
 }
+
 .menu-icon {
     position: absolute;
     width: 25px; height: 20px;
@@ -91,6 +75,7 @@ body {
     transform: translateY(10px) translateY(-50%) rotate(-45deg);
     background-color: yellow;
 }
+
 /* open 되었을때 X로 바꿔 줄려는 코드(위에꺼) */
 .menu.open .menu-line-2 {
     opacity: 0;
@@ -99,9 +84,7 @@ body {
     transform: translateY(-10px) translateY(50%) rotate(45deg);
     background-color: yellow;
 }
-.menu.open .menu-line {
-    z-index: 9999;
-}
+
 /* 오버레이 메뉴로 오픈시키기 */
 .menu-overlay {
     background-color: rgba(0, 0, 0, 0.9);
@@ -112,7 +95,7 @@ body {
     top: 0; bottom: 0;
     text-align: center;
     transition: opacity 0.2s ease-in-out;
-    /* z-index: 1001; */
+    z-index: 1001;
     visibility: hidden;
     display: flex;
     flex-direction: column;
@@ -146,9 +129,10 @@ body {
 
 /* bottom menu */
 .sticky_wrap .sns-menu {
-    position: absolute;
+    position: fixed;
     bottom: 50px;
     right: 50px;
+    z-index: 1001;
     /* outline: 1px solid red; */
 }
 
@@ -663,7 +647,8 @@ section h2 {
     position: absolute;
     right: 0;
     /* outline: 1px solid red; */
-    width: 1560px; height: 745px;
+    width: 1515px; height: 745px;
+    margin-right: 50px;
     overflow: hidden;
 }
 
@@ -695,6 +680,7 @@ section h2 {
     overflow: hidden;
     /* outline: 1px solid red; */
     text-align: center;
+    position: relative;
     /* position: relative; */
     /* cursor: pointer; */
 }
@@ -702,8 +688,14 @@ section h2 {
 .slider .slide-wrap .thumb img:first-child {
     width: 100%;
     /* opacity: 0.2; */
-    /* position: absolute;
-    top: 0; left: 0; */
+    position: absolute;
+    top: 0; left: 0; 
+}
+.slider .slide-wrap .thumb .hover {
+    position: absolute;
+    top: 0; left: 0 ;
+    opacity: 0.8;
+    display: none;
 }
 
 
@@ -743,7 +735,7 @@ section h2 {
 .buttons {
     position: absolute;
     left: 0; bottom: -3px;
-    z-index: 9999;
+    /* z-index: 1000; */
 
     /* overflow: hidden; */
 }

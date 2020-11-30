@@ -21,44 +21,44 @@
     <script src="./script/main.js"></script>
 </head>
 <body>
-    <!-- sticky menu -->
-    <section id="sticky">
-            <div class="sticky_wrap">
-                <div class="logo">
-                        <a href="./index.html"><img src="./imgs/logo.png" alt="logo"></a>
-                </div>
-                <!-- 메뉴 펼쳤을 때 -->
-                <div class="menu-overlay">
-                        <nav>
-                            <ul>
-                                <li><a href="#about"><span>{</span> about <span>}</span> </a></li>
-                                <li><a href="#portfolio"><span>{</span> portfolio <span>}</span> </a></li>
-                                <li><a href="#"><span>{</span> contact <span>}</span></a></li>
-                            </ul>
-                        </nav>
-                </div>
-                <!-- 메뉴 모양  -->
-                <div class="menu">
-                        <span class="menu-circle"></span>
-                        <a href="#" class="menu-link">
-                            <span class="menu-icon">
-                                <span class="menu-line menu-line-1"></span>
-                                <span class="menu-line menu-line-2"></span>
-                                <span class="menu-line menu-line-3"></span>
-                            </span>
-                        </a>
-                </div>
-                <div class="sns-menu">
-                    <div class="bottom">
+     <!-- sticky menu -->
+     <section id="sticky">
+        <div class="sticky_wrap">
+            <div class="logo">
+                    <a href="./index.html"><img src="./imgs/logo.png" alt="logo"></a>
+            </div>
+            <!-- 메뉴 펼쳤을 때 -->
+            <div class="menu-overlay">
+                    <nav>
                         <ul>
-                            <li><a href="#">Instagram</a></li>
-                            <li><a href="#">behance</a></li>
-                            <li><a href="#">Github</a></li>
+                            <li><a href="#about"><span>{</span> about <span>}</span> </a></li>
+                            <li><a href="#portfolio"><span>{</span> portfolio <span>}</span> </a></li>
+                            <li><a href="#"><span>{</span> contact <span>}</span></a></li>
                         </ul>
-                    </div>
-                </div>         
-            </div><!-- sticky wrap end-->    
-    </section>
+                    </nav>
+            </div>
+            <!-- 메뉴 모양  -->
+            <div class="menu">
+                    <span class="menu-circle"></span>
+                    <a href="#" class="menu-link">
+                        <span class="menu-icon">
+                            <span class="menu-line menu-line-1"></span>
+                            <span class="menu-line menu-line-2"></span>
+                            <span class="menu-line menu-line-3"></span>
+                        </span>
+                    </a>
+            </div>
+            <div class="sns-menu">
+                <div class="bottom">
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">behance</a></li>
+                        <li><a href="#">Github</a></li>
+                    </ul>
+                </div>
+            </div>         
+        </div><!-- sticky wrap end-->    
+    </section>  
     <!-- front page -->
     <section class="fullscreen" id="front">
             <div class="textarea-wrap">
@@ -200,7 +200,10 @@
                     <ul class="slide-wrap">
                         <li class="slide1">
                             <div class="thumb"> 
-                                <a href="#"><img src="./imgs/iljin.png" alt="iljin" class="normal"></a>
+                                <a href="#">
+                                    <img src="./imgs/iljin.png" alt="iljin" class="normal">
+                                    <img src="./imgs/hover.jpg" alt="hover_img" class="hover">
+                                </a>
                             </div><!--thumb-->
                             <div class="line1"></div>
                             <div class="line2"></div>
@@ -211,7 +214,10 @@
                         </li>
                         <li class="slide2">
                             <div class="thumb">
-                                <a href="#"><img src="./imgs/myungga_.jpg" alt="iljin"></a>
+                                <a href="#">
+                                    <img src="./imgs/myungga_.jpg" alt="iljin" class="normal">
+                                    <img src="./imgs/hover.jpg" alt="hover_img" class="hover">
+                                </a>
                             </div>
                             <div class="line1"></div>
                             <div class="line2"></div>
@@ -222,7 +228,10 @@
                         </li>
                         <li class="slide3">
                             <div class="thumb">
-                                <a href="#"><img src="./imgs/iljin.png" alt="iljin"></a>
+                                <a href="#">
+                                    <img src="./imgs/iljin.png" alt="iljin" class="normal">
+                                    <img src="./imgs/hover.jpg" alt="hover_img" class="hover">
+                                </a>
                             </div>
                             <div class="line1"></div>
                             <div class="line2"></div>
@@ -252,6 +261,7 @@
                 </div><!--slider end-->
             </div><!--slider Wrap end-->        
     </section>
+       
     <script>
         // 슬라이드 
         var slides = document.querySelector('.slide-wrap');
@@ -294,6 +304,19 @@
             $('.right').click(function(e){
                 e.preventDefault();
             })
+        });
+
+        // 슬라이드 호버 효과 
+        $(function(){
+            $('.thumb').hover(
+                function(){
+                    $(this).find('.normal').stop().fadeTo(800, 0.9);
+                    $(this).find('.hover').stop().fadeIn(1000);
+                }, 
+                function(){
+                    $(this).find('.normal').stop().fadeIn(800);
+                    $(this).find('.hover').stop().fadeOut(1000);
+                });
         });
     </script>
 </body>
